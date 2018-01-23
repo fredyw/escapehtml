@@ -108,9 +108,8 @@ func escapeHTML(srcPath string, destPath string) {
 				if ft, _ := fileExists(destPath); ft == nil {
 					if e := os.MkdirAll(destPath, 0775); e != nil {
 						return errors.New("Unable to create directory: " + destPath)
-					} else {
-						fmt.Println("Creating directory: " + destPath)
 					}
+					fmt.Println("Creating directory: " + destPath)
 				}
 				newPath := filepath.Join(destPath, filepath.Base(path)+".txt")
 				fmt.Println("Creating", newPath)
